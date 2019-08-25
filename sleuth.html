@@ -27,7 +27,7 @@
     <script>
         function alert(){
             var words = document.getElementById("text").value;
-            document.getElementById("paragraph").innerHTML = (words);
+            document.getElementById("guestList").innerHTML += (words + " ");
         }
     </script>
 </head>
@@ -40,6 +40,7 @@
             <button type="button" id="btn" onclick="alert()">SUBMIT</button>
         </div>
     </form>
-    <p id="paragraph">Text goes here</p>
+    <p id="paragraph">Who are the guests?</p>
+    <p id="guestList"></p>
 </body>
 </html>
