@@ -13,7 +13,7 @@
             background-image: linear-gradient(to bottom right, dodgerblue, blue);
         }
 
-        #stuff {
+        #text {
             font-size: 30px;
             margin-top: 20px;
             margin-left: 20px;
@@ -27,7 +27,7 @@
     <script>
         function alert(){
             var words = document.getElementById("text").value;
-            document.write("You submitted " + words);
+            document.getElementById("paragraph").innerHTML = (words);
         }
     </script>
 </head>
@@ -37,8 +37,9 @@
             <input type="text" id="text">
         </div>
         <div>
-            <button type="submit" onclick="alert()" id="btn">SUBMIT</button>
+            <button type="button" id="btn" onclick="alert()">SUBMIT</button>
         </div>
     </form>
+    <p id="paragraph">Text goes here</p>
 </body>
 </html>
