@@ -1,0 +1,23 @@
+﻿html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom right, dodgerblue, blue);
+}
+
+#text {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#btn {
+    padding: 10px 5px 10px 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
