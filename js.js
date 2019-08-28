@@ -1,10 +1,6 @@
-function writeText() {
-    var words = document.getElementById("text").value;
-    document.getElementById("guestList").innerHTML += (words + " ");
-}
-
+var guestArray=[];
 //add guest
-const addGuest = document.forms['onlyForm'];
+const addGuest = document.forms['addGuest'];
 addGuest.addEventListener("submit", function(e){
     e.preventDefault();
     const value = addGuest.querySelector('input[type="text"]').value;
@@ -16,4 +12,7 @@ addGuest.addEventListener("submit", function(e){
 
     //add content
     newPara.textContent = value;
+    guestArray.push(value);
+    finalCount = guestArray.slice(0, 7);
+    console.log(finalCount);
 });
