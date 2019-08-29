@@ -10,16 +10,17 @@ body {
     background-image: linear-gradient(to bottom right, dodgerblue, navy);
     color: #272b30;
     font-size: 20px;
+    padding: 40px;
 }
 
 input {
     font-size: 30px;
-    margin-top: 20px;
-    margin-left: 20px;
+    //margin-top: 20px;
+    //margin-left: 20px;
 }
 
 .btn {
     padding: 10px 5px 10px 5px;
     margin-top: 20px;
-    margin-left: 20px;
+    //margin-left: 20px;
 }
