@@ -4,9 +4,7 @@ function whoIsDead() {
     return guestArray[Math.floor(Math.random() * Math.floor(7))];
 }
 
-
-
-
+var clickCount = 0;
 
 //add guest
 const addGuest = document.forms['addGuest'];
@@ -53,19 +51,28 @@ addGuest.addEventListener("submit", function(e){
             s.setAttribute('class', "btn");
             s.setAttribute('value', "Continue");
 
+
             irs.appendChild(i);
             //irs.appendChild(s);
             anotherParagraph.appendChild(irs);
             anotherParagraph.appendChild(s);
 
+
+            clickCount++;
+            clickCount++ >= 1 ? document.getElementById('doneGuest').disabled = true : document.getElementById('doneGuest').disabled = false;
+
+
+
+
         });
+
+
 
         
     } else {
         guestArray.push(value);
         newPara.textContent = "The current guest list includes: " + guestArray;
     }
-
 
 
 });
