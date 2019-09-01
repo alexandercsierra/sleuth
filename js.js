@@ -35,7 +35,7 @@ addGuest.addEventListener("submit", function(e){
             openingStatement.appendChild(anotherParagraph);
             var murderedGuest = whoIsDead();
             anotherParagraph.textContent = "You stand at the estate of " + murderedGuest + ". You have your choice of rooms to visit. Where shall you head first?";
-        
+            anotherParagraph.textContent = " ";
             //irs stans for initial room selection
             var irs = document.createElement("form");
             //irs.setAttribute('method',"post");
