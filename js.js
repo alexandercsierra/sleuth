@@ -1,7 +1,20 @@
 var guestArray=[];
+var roomArray=['Lounge', 'Dining Room', 'Kitchen', 'Ballroom', 'Conservatory', 'Billiard Room', 'Library', 'Study', 'Hall'];
+var weapons = ["candlestick", "wrench", "lead pipe", "revolver", "rope", "knife"];
 
+//randomly choosing a murder victim
 function whoIsDead() {
     return guestArray[Math.floor(Math.random() * Math.floor(7))];
+}
+
+//randomly choosing a weapon
+function printWeapon(){
+  return weapons[Math.floor(Math.random() * Math.floor(6))];
+}
+
+//randomly choosing a room
+function printRoom() {
+  return rooms[Math.floor(Math.random() * Math.floor(9))];
 }
 
 var clickCount = 0;
@@ -32,8 +45,11 @@ addGuest.addEventListener("submit", function(e){
             var anotherParagraph = document.createElement("p");
             openingStatement.appendChild(anotherParagraph);
             var murderedGuest = whoIsDead();
+            //filters out dead guest so they aren't in play
+            var newGuestArray = guestArray.filter(f => f !== murderedGuest);
             anotherParagraph.textContent = "You stand at the estate of " + murderedGuest + ". You have your choice of rooms to visit. Where shall you head first?";
-            anotherParagraph.textContent = " ";
+
+
             //irs stans for initial room selection
             var irs = document.createElement("form");
             //irs.setAttribute('method',"post");
@@ -42,12 +58,12 @@ addGuest.addEventListener("submit", function(e){
 
             var i = document.createElement("input"); //input element, text
             i.setAttribute('type',"text");
-            i.setAttribute('onfocus', "this.value=' '");
+            //i.setAttribute('onfocus', "this.value=' '");
             //i.setAttribute('name',"username");
 
             var s = document.createElement("input"); //input element, Submit button
             s.setAttribute('type', "submit");
-            s.setAttribute('id', "nextRoom");
+            s.setAttribute('id', "firstRoom");
             s.setAttribute('class', "btn");
             s.setAttribute('value', "Continue");
 
@@ -57,11 +73,26 @@ addGuest.addEventListener("submit", function(e){
             anotherParagraph.appendChild(irs);
             anotherParagraph.appendChild(s);
 
-
+            //continue button works only once
             clickCount++;
             clickCount++ >= 1 ? document.getElementById('doneGuest').disabled = true : document.getElementById('doneGuest').disabled = false;
 
+            //assigning the murder weapon to a static variable
+            var murderWeapon = printWeapon();
 
+            const firstRoom = document.forms['irs'];
+            firstRoom.addEventListener("submit", function(e){
+                e.preventDefault();
+                const value = irs.querySelector('input[type="text"]').value;
+                for (i=0; i<roomArray.length; i++){
+                    if (value == roomArray[i]){
+                        anotherParagraph.textContent = "You have entered the " + value + ". This room contains ";
+                    } else {
+                        document.createElement("p").textContent = "Please enter a valid room. Your choices are the following: " + roomArray;
+                    }
+                }
+
+            });
 
 
         });
