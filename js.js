@@ -84,13 +84,14 @@ addGuest.addEventListener("submit", function(e){
             firstRoom.addEventListener("submit", function(e){
                 e.preventDefault();
                 const value = irs.querySelector('input[type="text"]').value;
-                for (i=0; i<roomArray.length; i++){
+                window.location.href="Lounge.html";
+                /*for (i=0; i<roomArray.length; i++){
                     if (value == roomArray[i]){
-                        anotherParagraph.textContent = "You have entered the " + value + ". This room contains ";
+                        anotherParagraph.textContent = "You have entered the " + value + ".";
                     } else {
                         document.createElement("p").textContent = "Please enter a valid room. Your choices are the following: " + roomArray;
                     }
-                }
+                }*/
 
             });
 

@@ -31,11 +31,6 @@ input {
     font-size: 20px;
 }
 
-#nextRoom2 {
-    color: white;
-    background-color: rebeccapurple;
-    border-radius: 10px;
-    border: none;
-    font-size: 20px;
-
+#irs {
+    margin-top: 20px;
 }
