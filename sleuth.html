@@ -3,9 +3,9 @@
     <link href="stylesheet.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <form id="addGuest">
+    <form id="addGuest" autocomplete="off">
         <div>
-            <input type="text" id="text" placeholder="Enter guest name">
+            <input type="text" id="text" placeholder="Enter guest name" onfocus="this.value=' '">
         </div>
         <div>
             <button type="submit" id="btn" class="btn">Add Guest</button>

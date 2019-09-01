@@ -17,10 +17,25 @@ input {
     font-size: 30px;
     //margin-top: 20px;
     //margin-left: 20px;
+    border-radius: 5px;
 }
 
 .btn {
     padding: 10px 5px 10px 5px;
     margin-top: 20px;
     //margin-left: 20px;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+}
+
+#nextRoom2 {
+    color: white;
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+
 }
